@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.DengguangbaoxiuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.DengguangbaoxiuEntity" id="dengguangbaoxiuMap">
+        <result property="shebeimingcheng" column="shebeimingcheng"/>
+        <result property="dengguangleixing" column="dengguangleixing"/>
+        <result property="shifouweixiu" column="shifouweixiu"/>
+        <result property="weixiushijian" column="weixiushijian"/>
+        <result property="dengguangjutiweizhi" column="dengguangjutiweizhi"/>
+        <result property="dengguangsunhaichengdu" column="dengguangsunhaichengdu"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="weixiulianxidianhua" column="weixiulianxidianhua"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.DengguangbaoxiuVO" >
+		SELECT * FROM dengguangbaoxiu  dengguangbaoxiu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.DengguangbaoxiuVO" >
+		SELECT  dengguangbaoxiu.* FROM dengguangbaoxiu  dengguangbaoxiu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.DengguangbaoxiuView" >
+
+		SELECT  dengguangbaoxiu.* FROM dengguangbaoxiu  dengguangbaoxiu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.DengguangbaoxiuView" >
+		SELECT * FROM dengguangbaoxiu  dengguangbaoxiu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
